@@ -1,0 +1,8 @@
+SecRule REQUEST_METHOD "@streq POST" \
+    "id:9000001,\
+    phase:1,\
+    pass,\
+    nolog,\
+    chain"
+    SecRule REQUEST_URI "@streq /api/auth/validateToken" \
+        "ctl:ruleRemoveById=920420"
