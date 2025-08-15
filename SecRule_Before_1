@@ -1,0 +1,4 @@
+SecRule REQUEST_URI "@beginsWith /api/auth/validateToken" \
+    "id:1000002,phase:1,pass,nolog,ctl:auditEngine=Off,chain"
+    SecRule REQUEST_HEADERS:Content-Type "@streq text/plain" \
+    "ctl:ruleRemoveById=920420"
